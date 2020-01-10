@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 fullnameOverride: riskidentwebservice
-replicaCount: 1
+replicaCount: 3
 image:
-  repository: riskidentwebservice
-  tag: stable
+  repository: dhillonsiddharth/riskidentwebservice
+  tag: latest
   pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.
@@ -15,16 +15,16 @@ imagePullSecrets: []
   # This uses credentials from secret "myRegistryKeySecretName".
   # - name: myRegistryKeySecretName
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
 
 probes:
   enabled: false
 
 ingress:
-  enabled: false
+  enabled: true
   annotations:
-    # kubernetes.io/tls-acme: "true"
+     kubernetes.io/tls-acme: "true"
   path: /
   # hosts:
   #   - chart-example.local

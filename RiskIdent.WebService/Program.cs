@@ -21,6 +21,7 @@ namespace RiskIdent.WebService
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    
                 });
     }
 }

@@ -26,7 +26,7 @@ ingress:
   annotations:
      kubernetes.io/tls-acme: "true"
   path: /
-  # hosts:
+  hosts: [dashboard.kubernetes]
   #   - chart-example.local
   tls: []
     # - secretName: chart-example-tls
